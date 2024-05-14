@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Task</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- app -->
+    <section class="container mx-auto xl:max-w-screen-xl px-4 sm:px-6 mb-20">
+      <!-- title -->
+      <div class="flex items-center justify-center lg:justify-start my-20">
+        <h2 class="text-2xl lg:text-3xl text-secondary-800 font-black">
+          سبد دوره های شما
+        </h2>
+      </div>
+      <!-- cart-content -->
+      <div class="flex flex-col gap-y-12 lg:flex-row lg:gap-x-8 xl:gap-x-16">
+        <!-- cart-items -->
+        <div
+          class="flex flex-col gap-y-5 lg:flex-1"
+          x-data="{
+            courses: [
+              {id: 1, title: 'دوره حرفه ای متخصص ریکت', price: '۶,۲۹۸,۰۰۰'},
+              {id: 2, title: 'دوره حرفه ای متخصص ریکت', price: '۶,۲۹۸,۰۰۰'},
+            ]
+          }"
+        >
+          <template x-for="course in courses" :key="course.id">
+            <!-- single cart-item -->
+            <div
+              class="bg-secondary-0 p-4 lg:px-5 lg:py-7 rounded-2xl flex items-stretch gap-x-3 lg:gap-x-4 xl:gap-x-8 shadow-[0_4px_250px_0_rgba(54,56,83,0.15)]"
+            >
+              <!-- item-img -->
+              <div class="w-20 min-[360px]:w-28 sm:w-32 lg:w-40 h-auto">
+                <img
+                  class="w-full h-full rounded-xl"
+                  src="/assets/images/react-img.png"
+                  alt="react-course"
+                />
+              </div>
+              <!-- item-detail -->
+              <div
+                class="flex flex-col justify-center gap-y-4 flex-1 lg:flex-row lg:items-center lg:justify-between"
+              >
+                <div class="lg:flex lg:flex-col lg:h-full lg:justify-around">
+                  <!-- item-title -->
+                  <p
+                    x-text="course.title"
+                    class="text-sm sm:text-base lg:text-lg font-black text-secondary-900"
+                  ></p>
+                  <!-- item-features -->
+                  <div
+                    class="hidden lg:grid grid-cols-2 grid-rows-2 gap-y-3 text-xs text-secondary-600 font-bold"
+                  >
+                    <div class="flex items-center gap-x-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="17"
+                        fill="none"
+                      >
+                        <path
+                          stroke="#6A6C87"
+                          d="M2.235 6.467a5.008 5.008 0 0 1 3.732-3.732 8.902 8.902 0 0 1 4.066 0 5.007 5.007 0 0 1 3.732 3.732 8.901 8.901 0 0 1 0 4.066 5.008 5.008 0 0 1-3.732 3.732 8.903 8.903 0 0 1-4.066 0 5.007 5.007 0 0 1-3.732-3.732 8.902 8.902 0 0 1 0-4.066Z"
+                        />
+                        <path
+                          stroke="#6A6C87"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9.667 10.167 7.774 8.963V6.5"
+                        />
+                      </svg>
+                      <span class="mt-0.5">۴۵ ساعت</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="17"
+                        fill="none"
+                      >
+                        <path
+                          stroke="#6A6C87"
+                          d="M2.235 6.467a5.008 5.008 0 0 1 3.732-3.732 8.902 8.902 0 0 1 4.066 0 5.007 5.007 0 0 1 3.732 3.732 8.901 8.901 0 0 1 0 4.066 5.008 5.008 0 0 1-3.732 3.732 8.903 8.903 0 0 1-4.066 0 5.007 5.007 0 0 1-3.732-3.732 8.902 8.902 0 0 1 0-4.066Z"
+                        />
+                        <path
+                          stroke="#6A6C87"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9.667 10.167 7.774 8.963V6.5"
+                        />
+                      </svg>
+                      <span class="mt-0.5">+۱۳۰۰ دانشجو</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.31452 9.53629L2.79481 9.39731L2.79481 9.39731L2.31452 9.53629ZM2.31452 5.10436L1.83423 4.96537H1.83423L2.31452 5.10436ZM13.6855 5.10436L14.1658 4.96537V4.96537L13.6855 5.10436ZM13.6855 9.53629L13.2052 9.3973L13.2052 9.3973L13.6855 9.53629ZM11.2099 11.8384L11.1165 11.3472L11.2099 11.8384ZM4.79015 11.8384L4.88354 11.3472L4.79015 11.8384ZM4.79015 2.80229L4.69675 2.31109L4.79015 2.80229ZM11.2099 2.80229L11.3033 2.31109L11.2099 2.80229ZM2.3467 9.64749L1.86641 9.78648H1.86641L2.3467 9.64749ZM13.6533 9.64749L14.1336 9.78648L14.1336 9.78648L13.6533 9.64749ZM13.6533 4.99316L13.173 5.13214V5.13215L13.6533 4.99316ZM2.3467 4.99316L2.82699 5.13214V5.13214L2.3467 4.99316ZM8.5 12.4487C8.5 12.1725 8.27614 11.9487 8 11.9487C7.72386 11.9487 7.5 12.1725 7.5 12.4487H8.5ZM7.5 14.5C7.5 14.7761 7.72386 15 8 15C8.27614 15 8.5 14.7761 8.5 14.5H7.5ZM6.24257 14C5.96643 14 5.74257 14.2239 5.74257 14.5C5.74257 14.7761 5.96643 15 6.24257 15V14ZM9.75743 15C10.0336 15 10.2574 14.7761 10.2574 14.5C10.2574 14.2239 10.0336 14 9.75743 14V15ZM13.173 5.13215L13.2052 5.24335L14.1658 4.96537L14.1336 4.85417L13.173 5.13215ZM13.2052 9.3973L13.173 9.50851L14.1336 9.78648L14.1658 9.67528L13.2052 9.3973ZM2.82699 9.50851L2.79481 9.39731L1.83423 9.67528L1.86641 9.78648L2.82699 9.50851ZM2.79481 5.24335L2.82699 5.13214L1.86641 4.85417L1.83423 4.96537L2.79481 5.24335ZM2.79481 9.39731C2.40173 8.03895 2.40173 6.6017 2.79481 5.24335L1.83423 4.96537C1.38859 6.50532 1.38859 8.13533 1.83423 9.67528L2.79481 9.39731ZM13.2052 5.24335C13.5983 6.60171 13.5983 8.03895 13.2052 9.3973L14.1658 9.67528C14.6114 8.13533 14.6114 6.50532 14.1658 4.96537L13.2052 5.24335ZM11.1165 11.3472C9.05833 11.7385 6.94167 11.7385 4.88354 11.3472L4.69675 12.3296C6.87831 12.7443 9.1217 12.7443 11.3032 12.3296L11.1165 11.3472ZM4.88354 3.29349C6.94167 2.90217 9.05833 2.90217 11.1165 3.29349L11.3033 2.31109C9.1217 1.8963 6.87831 1.8963 4.69675 2.31109L4.88354 3.29349ZM4.88354 11.3472C3.88845 11.158 3.0972 10.4422 2.82699 9.50851L1.86641 9.78648C2.24458 11.0933 3.34333 12.0722 4.69675 12.3296L4.88354 11.3472ZM11.3032 12.3296C12.6567 12.0722 13.7554 11.0933 14.1336 9.78648L13.173 9.5085C12.9028 10.4422 12.1116 11.158 11.1165 11.3472L11.3032 12.3296ZM11.1165 3.29349C12.1116 3.4827 12.9028 4.1984 13.173 5.13214L14.1336 4.85417C13.7554 3.54735 12.6567 2.56843 11.3033 2.31109L11.1165 3.29349ZM4.69675 2.31109C3.34333 2.56843 2.24458 3.54735 1.86641 4.85417L2.82699 5.13214C3.0972 4.1984 3.88845 3.4827 4.88354 3.29349L4.69675 2.31109ZM7.5 12.4487V14.5H8.5V12.4487H7.5ZM6.24257 15H9.75743V14H6.24257V15Z"
+                          fill="#6A6C87"
+                        />
+                        <path
+                          d="M5.33331 8L6.70587 6.91911C6.95641 6.72181 7.08168 6.62316 7.2202 6.64076C7.35872 6.65835 7.45535 6.78518 7.64862 7.03884L8.35134 7.96116C8.54461 8.21482 8.64124 8.34165 8.77976 8.35924C8.91828 8.37684 9.04355 8.27819 9.29409 8.08089L10.6666 7"
+                          stroke="#6A6C87"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                      <span class="mt-0.5">۲۷۰ جلسه</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="15"
+                        fill="none"
+                      >
+                        <path
+                          stroke="#F90"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width=".875"
+                          d="M7.088 10.125v1.225"
+                        />
+                        <path
+                          stroke="#F90"
+                          stroke-miterlimit="10"
+                          stroke-width=".875"
+                          d="M4.17 13.333h5.834v-.583a1.17 1.17 0 0 0-1.166-1.167h-3.5A1.17 1.17 0 0 0 4.17 12.75v.583Z"
+                        />
+                        <path
+                          stroke="#F90"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width=".875"
+                          d="M3.588 13.333h7"
+                        />
+                        <path
+                          fill="#F90"
+                          fill-opacity=".2"
+                          stroke="#F90"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width=".875"
+                          d="M7 9.833A4.08 4.08 0 0 1 2.917 5.75V4A2.333 2.333 0 0 1 5.25 1.667h3.5A2.333 2.333 0 0 1 11.083 4v1.75A4.08 4.08 0 0 1 7 9.833Z"
+                        />
+                        <path
+                          stroke="#F90"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width=".875"
+                          d="M3.19 7.296a2.834 2.834 0 0 1-1.125-.7c-.525-.584-.875-1.284-.875-2.1 0-.817.642-1.459 1.458-1.459h.38a2.19 2.19 0 0 0-.175.875v1.75c0 .584.122 1.132.338 1.634ZM10.81 7.296c.437-.14.822-.397 1.125-.7.525-.584.875-1.284.875-2.1 0-.817-.642-1.459-1.458-1.459h-.38c.117.269.176.566.176.875v1.75a4.11 4.11 0 0 1-.339 1.634Z"
+                        />
+                      </svg>
+                      <span class="mt-0.5 text-warning">چالش های هفتگی</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lg:flex lg:flex-col lg:h-full lg:justify-between">
+                  <!-- teacher-info -->
+                  <div class="hidden lg:flex items-center gap-x-2.5">
+                    <div class="w-9 h-9">
+                      <img
+                        class="w-full h-full rounded-3xl"
+                        src="/assets/images/avatar.jpg"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div>
+                      <span class="text-[10px] font-bold text-gray-300 block">
+                        مدرس دوره
+                      </span>
+                      <span class="text-secondary-900 font-black text-sm">
+                        صاحب محمدی
+                      </span>
+                    </div>
+                  </div>
+                  <!-- item-price -->
+                  <div class="flex items-center justify-between lg:gap-x-4">
+                    <div class="flex items-center gap-x-1.5">
+                      <span
+                        x-text="course.price"
+                        class="text-lg sm:text-xl text-primary-900 font-black"
+                      ></span>
+                      <span class="text-[10px] font-bold text-gray-400">
+                        تومان
+                      </span>
+                    </div>
+                    <div
+                      class="flex items-center justify-center w-7 h-7 border border-gray-200 rounded-full cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 text-danger"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+        <!-- cart summary -->
+        <div
+          class="bg-secondary-0 rounded-2xl shadow-[0_4px_250px_0_rgba(54,56,83,0.15)] w-full lg:max-w-xs"
+        >
+          <div
+            class="p-8 flex items-center gap-x-3 pb-6 border-b border-b-gray-200"
+          >
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+              >
+                <path
+                  fill="#555775"
+                  d="M18.333 5v2.017c0 1.316-.833 2.15-2.15 2.15h-2.85V3.342c0-.925.759-1.675 1.684-1.675a3.35 3.35 0 0 1 2.341.975c.6.608.975 1.441.975 2.358Z"
+                />
+                <path
+                  fill="#555775"
+                  d="M1.667 5.833V17.5A.83.83 0 0 0 3 18.167L4.425 17.1a.84.84 0 0 1 1.1.083l1.383 1.392a.84.84 0 0 0 1.184 0l1.4-1.4a.826.826 0 0 1 1.083-.075L12 18.167a.835.835 0 0 0 1.333-.667V3.333c0-.916.75-1.666 1.667-1.666H5C2.5 1.667 1.667 3.158 1.667 5v.833Z"
+                  opacity=".4"
+                />
+                <path
+                  fill="#555775"
+                  d="M10 8.125H5a.63.63 0 0 1-.625-.625A.63.63 0 0 1 5 6.875h5a.63.63 0 0 1 .625.625.63.63 0 0 1-.625.625ZM9.375 11.458h-3.75A.63.63 0 0 1 5 10.833a.63.63 0 0 1 .625-.625h3.75a.63.63 0 0 1 .625.625.63.63 0 0 1-.625.625Z"
+                />
+              </svg>
+            </span>
+            <span class="text-xl font-black text-secondary-800">پرداخت</span>
+          </div>
+          <div
+            class="p-8 flex flex-col gap-y-8 border-b border-dashed border-b-gray-200"
+          >
+            <div class="flex items-center justify-between font-black">
+              <span class="text-secondary-700">جمع دوره ها</span>
+              <span class="text-lg text-primary-900">۴.۲۵۰.۰۰۰ +</span>
+            </div>
+            <div class="flex items-center justify-between font-black">
+              <span class="text-secondary-700">تخفیف ها</span>
+              <span class="text-lg text-danger">۷۵۰.۰۰۰ -</span>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col gap-y-6 items-center">
+            <span class="text-sm text-secondary-700 font-bold">
+              کد تخفیف دارم!
+            </span>
+            <button
+              class="w-full bg-primary-900 p-5 rounded-3xl text-secondary-0 font-bold text-lg min-[360px]:text-xl"
+            >
+              <div class="flex items-center justify-center gap-x-3">
+                <p>پرداخت</p>
+                <p>
+                  <span class="font-black">۳.۵۰۰.۰۰۰</span>
+                  <span class="text-[10px]">تومان</span>
+                </p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
